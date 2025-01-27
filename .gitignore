@@ -1,0 +1,13 @@
+# Archivos de IntelliJ IDEA
+.idea/
+
+# Archivos de Visual Studio Code
+.vscode/
+
+# Directorios generados por Maven
+target/
+
+# Archivos temporales de compilación
+*.log
+*.class
+
