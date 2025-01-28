@@ -3,12 +3,18 @@ package edu.eci.cvds.patterns.shapes;
 public class ShapeMain {
 
     public static void main(String[] args) {
+        
         if (args == null || args.length != 1) {
             System.err.println("Parameter of type RegularShapeType is required.");
             return;
         }
+        
+
         try {
             RegularShapeType type = RegularShapeType.valueOf(args[0]);
+            System.out.println("Shape type: " + type);
+
+            
             Shape shape = ShapeFactory.create(type);
             System.out.println(
                     String.format(

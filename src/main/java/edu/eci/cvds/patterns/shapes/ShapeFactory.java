@@ -6,14 +6,14 @@ import edu.eci.cvds.patterns.shapes.concrete.Pentagon;
 import edu.eci.cvds.patterns.shapes.concrete.Quadrilateral;
 
 public class ShapeFactory {
-    public static Shape createShape(RegularShapeType type) {
-        if (type == RegularShapeType.TRIANGLE) {
+    public static Shape create(RegularShapeType type) {
+        if (type == RegularShapeType.Triangle) {
             return new Triangle();
-        } else if (type == RegularShapeType.HEXAGON) {
+        } else if (type == RegularShapeType.Hexagon) {
             return new Hexagon();
-        } else if (type == RegularShapeType.PENTAGON) {
+        } else if (type == RegularShapeType.Pentagon) {
             return new Pentagon();
-        } else if (type == RegularShapeType.QUADRILATERAL) {
+        } else if (type == RegularShapeType.Quadrilateral) {
             return new Quadrilateral();
         } else {
             return null;

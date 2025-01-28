@@ -1,0 +1,2 @@
+mvn exec:java -Dexec.args="Hexagon" -Dexec.mainClass="edu.eci.cvds.patterns.shapes.ShapeMain"
+mvn exec:java -Dexec.mainClass="edu.eci.cvds.patterns.archetype.App"
