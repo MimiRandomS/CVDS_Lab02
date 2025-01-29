@@ -8,7 +8,7 @@ ESCUELA COLOMBIANA DE INGENIERÍA - CICLOS DE VIDA DE DESARROLLO DE SOFTWARE
 - Carlos David Barrero Velasquez.
 
 ---
-
+## LA HERRAMIENTA MAVEN
 ## Respuestas ✅
 
 -¿Qué es Maven?
@@ -58,6 +58,33 @@ Despliegue de artefactos.
 
 El repositorio central de Maven es un repositorio en línea donde se almacenan las bibliotecas y dependencias de proyectos. Maven descarga automáticamente las dependencias desde este repositorio cuando se especifican en el archivo pom.xml de tu proyecto.
 Su función principal es centralizar las dependencias más utilizadas y facilitar el acceso a ellas, ahorrando tiempo y esfuerzo al evitar la necesidad de descargarlas o configurarlas manualmente.
+
+## EJERCICIO DE LAS FIGURAS
+### CREAR UN PROYECTO CON MAVEN
+## Respuestas ✅
+
+Cómo ejecutar desde línea de comandos el objetivo "generate" del plugin "archetype"
+
+![Text](Assets/img1.png)
+
+Para ver el conjunto de archivos y directorios creados por el comando `mvn` ejecute el comando `tree`.
+
+![Text](Assets/img2.png)
+
+## AJUSTAR ALGUNAS CONFIGURACIONES EN EL PROYECTO
+## Respuestas ✅
+Edite el archivo `pom.xml`
+
+![Text](Assets/img3.png)
+
+## COMPILAR Y EJECUTAR
+## Respuestas ✅
+Para compilar ejecute el comando:
+```sh
+$ mvn package
+```
+
+![Text](Assets/img4.png)
 
 - ¿Cuál es el objetivo del parámetro "package" y qué otros parámetros se podrían enviar al comando mvn?
 
@@ -128,3 +155,75 @@ Uso: mvn dependency:tree
 Resultado: Muestra las dependencias que tiene tu proyecto, lo cual es útil para diagnosticar problemas de versiones o dependencias transitivas.
 ```
 ---
+
+Buscar cómo enviar parámetros al plugin "exec".
+
+Ejecutar la clase desde línea de comandos enviando su nombre como parámetro y verificar la salida. Ej: Hello Pepito!
+
+![Text](Assets/img6.png)
+![Text](Assets/img7.png)
+
+Verifique cómo enviar los parámetros de forma "compuesta" para que el saludo se realice con nombre y apellido.
+
+Ejecutar nuevamente y verificar la salida en consola. Ej: Hello Pepito Perez!
+
+![Text](Assets/img8.png)
+![Text](Assets/img9.png)
+
+## HACER EL ESQUELETO DE LA APLICACIÓN
+## Respuestas ✅
+Cree el paquete `edu.eci.cvds.patterns.shapes` y el paquete `edu.eci.cvds.patterns.shapes.concrete`.
+
+Cree una interfaz llamada `Shape.java` en el directorio `src/main/java/edu/eci/cvds/patterns/shapes`.
+
+Cree una enumeración llamada `RegularShapeType.java` en el directorio `src/main/java/edu/eci/cvds/patterns/shapes`.
+
+En el directorio `src/main/java/edu/eci/cvds/patterns/shapes/concrete` cree las diferentes clases (Triangle, Quadrilateral, Pentagon, Hexagon), que implementen la interfaz creada y retornen el número correspondiente de vértices que tiene la figura. 
+
+Cree el archivo `ShapeMain.java` en el directorio `src/main/java/edu/eci/cvds/patterns/shapes` con el metodo main.
+
+Analice y asegúrese de entender cada una de las instrucciones que se encuentran en todas las clases que se crearon anteriormente. Cree el archivo `ShapeFactory.java` en el directorio `src/main/java/edu/eci/cvds/patterns/shapes` implementando el patrón fábrica.
+
+![Text](Assets/img10.png)
+
+¿Cuál fábrica hiciste? y ¿Cuál es mejor?
+
+Nosotros realizamos el metodo simple factory, debido a que aunque sea simple el problema en cuestion no necesita un metodo complejo como los demas, por eso pensamos que el simple es el mejor, esto por como se ilustra en el bosquejo vemos que la fabrica crea instancias del objeto directamente y en nuestro problema solo tenemos una clase abstracta la cual nos da las clases de las figuras, si no entra un parametro valido manda error, si no ingresa nada pide una figura concreta y si la figura esta dentro de la fabrica pues esta manda la solucion la cual es mostar los lados que posee la figura.
+
+- Simple Factory:
+
+![imagen](https://github.com/PDSW-ECI/labs/assets/4140058/0788a0b7-a071-4b90-ac3f-5982289ff3b3)
+
+
+
+Ejecute múltiples veces la clase ShapeMain, usando el plugin exec de maven con los siguientes parámetros y verifique la salida en consola para cada una:
+
+- Sin parámetros
+
+![Text](Assets/img(2).png)
+
+- Parámetro: qwerty
+
+![Text](Assets/img(1).png)
+
+- Parámetro: pentagon
+
+![Text](Assets/img(3).png)
+
+- Parámetro: Hexagon
+
+![Text](Assets/img(4).png)
+
+¿Cuál(es) de las anteriores instrucciones se ejecutan y funcionan correctamente y por qué?
+
+Todas las instrucciones se ejecutan correctamente debido a que se esta validando los dos casos "atipicos" que seria que no entrara ningun parametro o que el parametro no fuera valido 
+muestra los lados de las dos figuradas ingresadas y muestra los mensajes de "error" o aviso al no tener las figuras.
+
+## ENTREGAR
+## Respuestas ✅
+Para qué sirve "gitignore" y configurelo en su proyecto para evitar adjuntar archivos que no son relevantes para el proyecto.
+
+![Text](Assets/img5.png)
+
+
+
